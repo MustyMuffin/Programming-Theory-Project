@@ -14,6 +14,19 @@ using System.IO;
 public class MainManager : MonoBehaviour
 {
     public static MainManager Instance { get; private set; } // Encapsulation
+    void SpawnBlockWave() // create new higher-level method 
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Instantiate(blockPrefab, GenerateSpawnPosition(),
+            blockPrefab.transform.rotation);
+        }
+    }
+
+    private void Start()
+    {
+        SpawnBlockWave(); // call higher-level method in Start()
+    }
     public void StartNew()
     {
         SceneManager.LoadScene(0);
