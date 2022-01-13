@@ -5,18 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-public class Counter : MonoBehaviour
+public class TouchCube : MonoBehaviour
 {
     public Text ScoreText; 
 
-private int Score = 0;
+public int Score = 0;
 
     private void Start()
     {
         Score = 0;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other) //POLYMORPHISM STEP 1
     {
         Score += 1;
         ScoreText.text = "Score : " + Score;

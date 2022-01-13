@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour //Inheritance example, everything derives from mono
 {
 
 	public float speed = 6.0F;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);
 			moveDirection *= speed;
-		} //ABSTRACTION EXAMPLE
+		} //ABSTRACTION EXAMPLE as I started with a lot more code and shortened it down
 		// Apply gravity manually.
 		moveDirection.y -= gravity * Time.deltaTime;
 		// Move Character Controller
